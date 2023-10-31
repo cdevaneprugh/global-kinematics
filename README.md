@@ -73,3 +73,27 @@ Where $A$ is the cross sectional area of the object, normal to its velocity. $C_
 $$ \rho = 1.225 e^{-height/8500} $$
 
 Where   $1.225$ is the atmospheric density at sea level, and $8500 m$ is the scale height of the atmosphere.
+
+# Coordinate Conversions
+### To convert from geodetic $(\phi, \lambda, heigh)$ to ECEF $(X,Y,Z)$
+
+$$ X = (R_{Earth}+h) cos(\phi) cos(\lambda) $$
+
+$$ Y = (R_{Earth}+h cos(\phi) sin(\lambda) $$
+
+$$ Z = (R_{Earth}+h sin(\lambda) $$
+
+### ECEF to Geodetic
+
+$$ \lambda = atan2(Y,X) $$
+
+$$ \phi = tan^{-1} ( \frac{Z}{ \sqrt{X^2 + Y^2} } ) $$
+
+$$ h = \frac{ \sqrt{X^2 + Y^2} }{ cos(\phi) } - R_{Earth} $$
+
+# To Do
+### Known Issues
+* At the equator, when the azimuthal angle=0, the trajectory makes no sense.
+### Features to Add
+* Use shooting method for boundary value problems.
+* For suborbital trajectories, use elliptical orbit equations to determin launch angle.
