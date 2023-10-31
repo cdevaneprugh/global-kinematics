@@ -1,5 +1,4 @@
 # global-kinematics
-# EDITING IN PROGRESS
 ## Overview
 A collection of python packages to explore kinematic motion on a global scale. Includes multiple trajectory calculation methods, variable atmospheric density, quadratic drag, variable planet rotation rate, height dependent gravity, and coordinate conversion methods to switch reference frames. For approximaitons of motion, we use analytically derived equatoins of motion. For full, numerical solutions, we use 4th order runge-kutta techniques to integrate our differential equations.
 
