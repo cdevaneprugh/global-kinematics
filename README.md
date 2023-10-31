@@ -73,4 +73,4 @@ Where $A$ is the cross sectional area of the object, normal to its velocity. $C_
 
 $$ \rho = 1.225 e^{-height/8500} $$
 
-Where   $1.225$ is the atmospheric density of the atmosphere, and $8500 m$ is the scale height of the atmosphere.
+Where   $1.225$ is the atmospheric density at sea level, and $8500 m$ is the scale height of the atmosphere.
