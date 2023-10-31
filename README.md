@@ -1,5 +1,5 @@
 # global-kinematics
-
+# EDITING IN PROGRESS
 ## Overview
 A collection of python packages to explore kinematic motion on a global scale. Includes multiple trajectory calculation methods, variable atmospheric density, quadratic drag, variable planet rotation rate, height dependent gravity, and coordinate conversion methods to switch reference frames. For approximaitons of motion, we use analytically derived equatoins of motion. For full, numerical solutions, we use 4th order runge-kutta techniques to integrate our differential equations.
 
@@ -26,8 +26,16 @@ Where $\Omega$ is the rotation rate of the Earth, and $\phi$ is the projectile's
 
 ## Velocity Components
 We use the alt/az convention, where the altitude is the angle measured up from the local horizon. The azimuthal angle is measured counterclockwise from North.
+
 $$ \dot x = v_0 sin(az) cos(alt) $$
 
 $$ \dot y = v_0 cos(az) cos(alt) $$
 
 $$ \dot z = v_0 sin(alt) $$
+
+## Newton's Second Law
+We set up Newton's second law for the forces we want to account for, then separate the ODE into it's acceleration components depending on the reference frame we are interested in.
+
+$$m \ddot r = F_{grav} + F_{drag} + F_{cor} $$
+
+$$ \ddot r = g - \frac{C}{m} v^2 \hat v + (2 \dot r \times \Omega )$$
