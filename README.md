@@ -48,3 +48,29 @@ $$ \ddot x = -\frac{C}{m} v v_x + 2 \Omega (v_y sin(\phi) - v_z cos(\phi) )$$
 $$ \ddot y = -\frac{C}{m} v v_y - 2 \Omega v_x sin(\phi) $$
 
 $$ \ddot z = -\frac{C}{m} v v_z + 2 \Omega v_x cos(\phi) - g$$
+
+### Geocentric Reference Frame
+In a ECEF reference frame, $\Omega = (0,0,\Omega)$. Following through with Newton's second law gives us:
+
+$$ \ddot x = -gcos(\phi)cos(\lambda) -\frac{C}{m}vv_x + 2\Omega v_y $$
+
+$$ \ddot y = -gcos(\phi)sin(\lambda) -\frac{C}{m}vv_y - 2 \Omega v_x $$
+
+$$ \ddot z = -gsin(\phi) -\frac{C}{m}vv_z $$
+
+Where $\lambda$ is the longitude.
+
+## Drag Force and Gravity
+We calculate the drag force and gravity depending on the current height of the projectile. The gravity is easily calculated with
+
+$$ g = \sqrt{ \frac{GM_{Earth}}{(R_{Earth} + height)^2}} $$
+
+The drag force is calculated based on the standard drag equation:
+
+$$ F_D = \frac{1}{2} \rho A C_d$$
+
+Where $A$ is the cross sectional area of the object, normal to its velocity. $C_d$ is the drag coefficient of the object, and $\rho$ is the air density. We calculate the current air density based off a negative exponent fitted to the 1976 US Standard Atmosphere.
+
+$$ \rho = 1.225 e^{-height/8500} $$
+
+Where   $1.225$ is the atmospheric density of the atmosphere, and $8500 m$ is the scale height of the atmosphere.
