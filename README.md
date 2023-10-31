@@ -15,3 +15,19 @@ Start by creating either a global or local projectile. You need to specify the i
 The global_projectile calculates solutions for ECEF, GCS, and ENU coordinate systems. These can be accessed with your_projectile.ECEF_soln, .GCS_soln, or .ENU_soln. Similarly, the local_projectile solution is accessed at your_projectile.solution. In addition to the numerical solution, the local_projectile has an analytically derived equation of motion which can be calculated in parallel to your numerical solution. It is a first order approximation of projectile motion with the coriolis force (from a local ENU reference frame) and was used to check my numerical soution as the code was being developed.
 
 See the demo jupyter notebook for more information on code usage.
+
+# Relevant Math
+## First Order Approximation
+Derived in problem 9.26 in Taylor's Classical Mechanics. These equations of motion were mainly used for "sanity checks" while developing the numerical methods. They can still be used to calculate approximations in the local_projectile class. They are only valid in a local ENU reference frame. 
+$$x(t)= v_{x0}t + \Omega (v_{y0}sin(\phi)-v_{z0}cos(\phi))t^2 + \frac{1}{3}\Omega g t^3 cos(\phi)$$
+$$y(t) =v_{y0}t - \Omega v_{x0}sin(\phi)t^2 $$
+$$z(t) =v_{y0}t + \Omega v_{x0}cos(\phi)t^2 - \frac{1}{2} g t^2 $$
+Where $\Omega$ is the rotation rate of the Earth, and $\phi$ is the projectile's latitude.
+
+## Velocity Components
+We use the alt/az convention, where the altitude is the angle measured up from the local horizon. The azimuthal angle is measured counterclockwise from North.
+$$ \dot x = v_0 sin(az) cos(alt) $$
+
+$$ \dot y = v_0 cos(az) cos(alt) $$
+
+$$ \dot z = v_0 sin(alt) $$
