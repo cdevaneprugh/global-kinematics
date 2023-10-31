@@ -39,3 +39,12 @@ We set up Newton's second law for the forces we want to account for, then separa
 $$m \ddot r = F_{grav} + F_{drag} + F_{cor} $$
 
 $$ \ddot r = g - \frac{C}{m} v^2 \hat v + (2 \dot r \times \Omega )$$
+
+### Local Reference Frame
+In the case of a local reference frame $\dot r = (\dot x, \dot y, \dot z)$ and $\Omega = (0, \Omega cos(\phi), \Omega sin(\phi))$. Where, once again, $\phi$ is the latitude. This brings our acceleration components to:
+
+$$ \ddot x = -\frac{C}{m} v v_x + 2 \Omega (v_y sin(\phi) - v_z cos(\phi) )$$  
+
+$$ \ddot y = -\frac{C}{m} v v_y - 2 \Omega v_x sin(\phi) $$
+
+$$ \ddot z = -\frac{C}{m} v v_z + 2 \Omega v_x cos(\phi) - g$$
