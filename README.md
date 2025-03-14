@@ -90,10 +90,3 @@ $$ \lambda = atan2(Y,X) $$
 $$ \phi = tan^{-1} ( \frac{Z}{ \sqrt{X^2 + Y^2} } ) $$
 
 $$ h = \frac{ \sqrt{X^2 + Y^2} }{ cos(\phi) } - R_{Earth} $$
-
-# To Do
-### Known Issues
-* At the equator, when the azimuthal angle=0, the trajectory makes no sense.
-### Features to Add
-* Use shooting method for boundary value problems.
-* For suborbital trajectories, use elliptical orbit equations to determin launch angle.
